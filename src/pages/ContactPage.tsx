@@ -36,6 +36,7 @@ type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 // ============================================================
 const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'your_service_id';
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'your_template_id';
+const EMAILJS_ADMIN_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_ADMIN_TEMPLATE_ID || 'your_admin_template_id';
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'your_public_key';
 
 // ============================================================
@@ -325,25 +326,38 @@ const ContactForm = memo(function ContactForm() {
     setStatus('sending');
 
     try {
-      // Send email using EmailJS
-      // Note: The recipient email (To Email) must be configured in your EmailJS template settings
-      // Template variables should match what's defined in your EmailJS template
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          // Sender information (matches auto-reply template)
-          name: formData.name,
-          email: formData.email,
-          title: formData.subject || 'General Inquiry', // Used in auto-reply: "{{title}}"
-          phone: formData.phone || 'Not provided',
-          company: formData.company || 'Not provided',
-          message: formData.message,
-          // Reply-to email
-          reply_to: formData.email,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      // Prepare template parameters
+      const templateParams = {
+        // Sender information (matches template variables)
+        name: formData.name,
+        email: formData.email,
+        title: formData.subject || 'General Inquiry',
+        phone: formData.phone || 'Not provided',
+        company: formData.company || 'Not provided',
+        message: formData.message,
+        // Reply-to email
+        reply_to: formData.email,
+      };
+
+      // Send two emails in parallel:
+      // 1. Auto-reply to user (existing template)
+      // 2. Notification to admin with form data (admin template)
+      await Promise.all([
+        // Auto-reply to user
+        emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        ),
+        // Admin notification with all form data
+        emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_ADMIN_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_PUBLIC_KEY
+        ),
+      ]);
 
       setStatus('success');
       setFormData({
