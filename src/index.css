@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Source files for Tailwind to scan */
+@source "../index.html";
+@source "./**/*.{js,ts,jsx,tsx}";
+
+/* Custom theme extends default Tailwind theme */
+@import "./styles/globals.css";
