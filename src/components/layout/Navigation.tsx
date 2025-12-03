@@ -104,17 +104,17 @@ export const TopNavigation = memo(function TopNavigation() {
       aria-label="Site navigation"
     >
       {/* Logo */}
-      <a 
-        href="#top" 
+      <Link 
+        to="/" 
         className="flex items-center z-10"
-        aria-label="Tech Edge - Go to top"
+        aria-label="Tech Edge - Go to home"
       >
         <img 
           src={techedgeLogo} 
           alt="Tech Edge" 
           className="h-[24px] sm:h-[30px] w-auto"
         />
-      </a>
+      </Link>
 
       {/* Center Nav - Floating pill style (absolutely centered) */}
       <div className="absolute left-1/2 -translate-x-1/2">
