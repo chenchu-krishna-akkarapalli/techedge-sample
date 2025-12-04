@@ -175,8 +175,8 @@ const ContactInfo = memo(function ContactInfo() {
         <ContactDetail
           icon={<PhoneIcon />}
           label="Phone"
-          value="+966 11 XXX XXXX"
-          href="tel:+96611XXXXXXX"
+          value="+966598898895"
+          href="tel:+966598898895"
         />
 
         {/* Address */}

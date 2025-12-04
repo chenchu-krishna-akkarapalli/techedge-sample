@@ -20,9 +20,10 @@ export const Header = memo(function Header() {
             <motion.h1
                 className={cn(
                     "block font-crimson font-normal text-center content-center self-center",
-                    "text-8xl leading-[85px]",
-                    "[text-shadow:0px_4px_4px_rgb(0_0_0_/_0.25)]",
-                    "text-black"
+                    "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl",
+                    "leading-tight sm:leading-snug md:leading-tight lg:leading-[75px] xl:leading-[85px]",
+                    "[text-shadow:0px_4px_4px_rgb(0_0_0/0.25)]",
+                    "text-black px-4 sm:px-6"
                 )}
                 initial={ANIMATIONS.fadeInUp.initial}
                 animate={ANIMATIONS.fadeInUp.animate}

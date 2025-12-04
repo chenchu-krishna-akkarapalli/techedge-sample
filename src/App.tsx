@@ -21,6 +21,7 @@ const ContactPage = lazy(() => import('@/pages/ContactPage').then(m => ({ defaul
 
 // Layout Components (Loaded eagerly for above-the-fold content)
 import { FloatingNav, TopNavigation, Header, Footer, FooterCredits } from '@/components/layout';
+import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 
 // ============================================================
 // Loading Fallback Component
@@ -69,6 +70,7 @@ function App() {
       <SWRProvider>
         <BrowserRouter>
           <ScrollRecoveryWrapper>
+            <FloatingWhatsApp />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={
