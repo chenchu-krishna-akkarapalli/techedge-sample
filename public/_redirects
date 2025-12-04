@@ -1,0 +1,22 @@
+# Netlify/Vercel Redirects for SPA
+# React Router support - all routes to index.html
+
+# SPA fallback
+/*    /index.html   200
+
+# Security.txt redirect
+/.well-known/security.txt    /security.txt    200
+
+# SEO - Trailing slash normalization
+/about/     /about      301
+/services/  /services   301
+/contact/   /contact    301
+
+# Legacy URL redirects (if any old URLs exist)
+/home       /           301
+/service    /services   301
+/contactus  /contact    301
+
+# Language redirects (future support)
+# /en/*      /:splat     200
+# /ar/*      /:splat     200

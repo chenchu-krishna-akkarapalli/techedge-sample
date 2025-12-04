@@ -1,0 +1,165 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.techedge.sa/#organization",
+      "name": "Tech Edge",
+      "url": "https://www.techedge.sa",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.techedge.sa/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Tech Edge is a leading digital transformation and IT consulting company in Saudi Arabia, specializing in SaaS development, cloud solutions, API integration, and enterprise digital solutions.",
+      "email": "info@techedge.sa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressRegion": "Riyadh Province",
+        "addressCountry": "SA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/techedge-sa",
+        "https://twitter.com/techedge_sa"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.techedge.sa/#website",
+      "url": "https://www.techedge.sa",
+      "name": "Tech Edge",
+      "description": "Digital Transformation & IT Solutions in Saudi Arabia",
+      "publisher": {
+        "@id": "https://www.techedge.sa/#organization"
+      },
+      "inLanguage": ["en", "ar"]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.techedge.sa/#services",
+      "name": "Tech Edge Services",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "SaaS Product Development",
+            "description": "Build scalable, cloud-native SaaS applications with modern architecture and best practices.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "API & Microservices Architecture",
+            "description": "Design and implement robust APIs and microservices for seamless system integration.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Cloud Environment Implementation",
+            "description": "Multi-cloud management, DevOps excellence, and infrastructure automation for scalable operations.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Digital Transformation & Consulting",
+            "description": "Business-aligned roadmaps, process automation, and compliance solutions that drive meaningful change.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Integration & Transformation Services",
+            "description": "Seamless data flow and system interoperability across enterprise platforms.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Service",
+            "name": "iPaaS & App Integration Solutions",
+            "description": "Integration Platform as a Service with real-time data synchronization and automation.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Service",
+            "name": "Staff Augmentation & Talent",
+            "description": "Flexible delivery models with skilled certified professionals.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Service",
+            "name": "Quality Assurance & Testing",
+            "description": "Comprehensive QA, test automation, and performance optimization for reliable applications.",
+            "provider": {"@id": "https://www.techedge.sa/#organization"}
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.techedge.sa/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Tech Edge provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tech Edge provides comprehensive IT services including SaaS Product Development, API & Microservices Architecture, Cloud Environment Implementation, Digital Transformation Consulting, Integration Services, iPaaS Solutions, Staff Augmentation, and Quality Assurance & Testing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Tech Edge located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tech Edge is headquartered in Riyadh, Saudi Arabia, serving clients across the Middle East and globally."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Tech Edge?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can reach Tech Edge through our contact form on the website, by email at info@techedge.sa, or by visiting our office in Riyadh, Saudi Arabia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Tech Edge support Vision 2030 initiatives?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Tech Edge actively supports Saudi Vision 2030 by providing digital transformation solutions that help organizations modernize their operations and embrace technology-driven growth."
+          }
+        }
+      ]
+    }
+  ]
+}

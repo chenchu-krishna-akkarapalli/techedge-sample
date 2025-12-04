@@ -1,0 +1,42 @@
+# Tech Edge - Robots.txt
+# https://www.techedge.sa/
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Allow specific search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandexbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.techedge.sa/sitemap.xml
+
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /private/
+
+# Allow CSS, JS, and images for proper rendering
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl-delay for polite crawling (optional)
+Crawl-delay: 1

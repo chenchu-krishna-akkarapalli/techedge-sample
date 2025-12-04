@@ -5,8 +5,8 @@ import { NavButton, CTAButton } from '@/components/common';
 import { NAV_ITEMS, ANIMATIONS } from '@/lib/constants';
 import { scrollToSection, cn } from '@/lib/utils';
 
-// Import Tech Edge logo
-import techedgeLogo from '@/assets/techedgelogo.svg';
+// Tech Edge logo (from public folder)
+const techedgeLogo = '/assets/techedgelogo.svg';
 
 // ============================================================
 // Fixed Navigation Bar (Floating pill)

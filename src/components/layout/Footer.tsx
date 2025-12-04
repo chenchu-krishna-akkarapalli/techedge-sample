@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 
 // ============================================================
@@ -6,10 +7,10 @@ import { cn } from '@/lib/utils';
 // ============================================================
 
 const FOOTER_NAV_ITEMS = [
-  { label: 'Home', href: '#' },
-  { label: 'About Us', href: '#about' },
-  { label: 'SERVICES & SOLUTIONS', href: '#benefits' },
-  { label: 'contact us', href: '#contact' },
+  { label: 'Home', to: '/' },
+  { label: 'About Us', to: '/about' },
+  { label: 'SERVICES & SOLUTIONS', to: '/services' },
+  { label: 'Contact Us', to: '/contact' },
 ] as const;
 
 // ============================================================
@@ -112,9 +113,9 @@ export const Footer = memo(function Footer() {
           {/* Column 2: Navigation Links */}
           <div className="flex flex-col gap-4">
             {FOOTER_NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.to}
                 className={cn(
                   'flex items-center gap-2',
                   'font-dm-sans font-normal',
@@ -124,7 +125,7 @@ export const Footer = memo(function Footer() {
               >
                 <ChevronRightIcon />
                 <span>{item.label}</span>
-              </a>
+              </Link>
             ))}
           </div>
 

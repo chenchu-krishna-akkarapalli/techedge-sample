@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { ANIMATIONS } from '@/lib/constants';
+import { SWRProvider, useScrollRecovery } from '@/lib/swr';
+import { LenisProvider } from '@/lib/lenis';
+import { useHomeSEO } from '@/lib/seo';
 
 // ============================================================
 // Lazy-loaded Section Components (Code Splitting)
@@ -38,30 +41,56 @@ const SectionLoader = memo(function SectionLoader() {
 });
 
 // ============================================================
+// Scroll Recovery Wrapper - Must be inside BrowserRouter
+// ============================================================
+const ScrollRecoveryWrapper = memo(function ScrollRecoveryWrapper({ 
+  children 
+}: { 
+  children: React.ReactNode 
+}) {
+  // This hook automatically saves and restores scroll position
+  useScrollRecovery();
+  return <>{children}</>;
+});
+
+// ============================================================
 // Main App Component
 // ============================================================
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={
-          <Suspense fallback={<PageLoader />}>
-            <AboutPage />
-          </Suspense>
-        } />
-        <Route path="/services" element={
-          <Suspense fallback={<PageLoader />}>
-            <ServicesPage />
-          </Suspense>
-        } />
-        <Route path="/contact" element={
-          <Suspense fallback={<PageLoader />}>
-            <ContactPage />
-          </Suspense>
-        } />
-      </Routes>
-    </BrowserRouter>
+    <LenisProvider
+      options={{
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+      }}
+    >
+      <SWRProvider>
+        <BrowserRouter>
+          <ScrollRecoveryWrapper>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={
+                <Suspense fallback={<PageLoader />}>
+                  <AboutPage />
+                </Suspense>
+              } />
+              <Route path="/services" element={
+                <Suspense fallback={<PageLoader />}>
+                  <ServicesPage />
+                </Suspense>
+              } />
+              <Route path="/contact" element={
+                <Suspense fallback={<PageLoader />}>
+                  <ContactPage />
+                </Suspense>
+              } />
+            </Routes>
+          </ScrollRecoveryWrapper>
+        </BrowserRouter>
+      </SWRProvider>
+    </LenisProvider>
   );
 }
 
@@ -83,6 +112,9 @@ const PageLoader = memo(function PageLoader() {
 // Home Page Component
 // ============================================================
 const HomePage = memo(function HomePage() {
+  // Apply SEO meta tags for homepage
+  useHomeSEO();
+
   return (
     <div 
       className={cn(

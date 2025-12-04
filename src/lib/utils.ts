@@ -11,11 +11,31 @@ export function cn(...inputs: ClassValue[]): string {
 
 /**
  * Smoothly scrolls to a section by ID
+ * Uses Lenis if available, falls back to native smooth scroll
  */
-export function scrollToSection(sectionId: string): void {
+export function scrollToSection(sectionId: string, offset: number = 0): void {
   const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Check if Lenis is available on window (set by LenisProvider)
+    const lenis = (window as any).__lenis;
+    if (lenis) {
+      lenis.scrollTo(element, { offset, duration: 1.2 });
+    } else {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
+/**
+ * Smoothly scrolls to top of page
+ * Uses Lenis if available, falls back to native scroll
+ */
+export function scrollToTop(immediate: boolean = false): void {
+  const lenis = (window as any).__lenis;
+  if (lenis) {
+    lenis.scrollTo(0, { immediate, duration: immediate ? 0 : 1.2 });
+  } else {
+    window.scrollTo({ top: 0, behavior: immediate ? 'instant' : 'smooth' });
   }
 }
 

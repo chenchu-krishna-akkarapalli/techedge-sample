@@ -1,24 +1,19 @@
 import { memo } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Section } from '@/components/common';
 import { ANIMATIONS, SCROLL_VIEWPORT } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
-// Import partner logos
-import bankAlbiladLogo from '@/assets/clients-asset/bankalbilad.svg';
-import bupaLogo from '@/assets/clients-asset/bupa.svg';
-import indianBankLogo from '@/assets/clients-asset/indianbank.svg';
-import nseLogo from '@/assets/clients-asset/nse.svg';
-
 // ============================================================
-// Partner Logos Data
+// Partner Logos Data (using public folder paths)
 // ============================================================
 
 const PARTNER_LOGOS = [
-  { id: 'bank-albilad', src: bankAlbiladLogo, alt: 'Bank Albilad' },
-  { id: 'bupa', src: bupaLogo, alt: 'Bupa Arabia' },
-  { id: 'indian-bank', src: indianBankLogo, alt: 'Indian Bank' },
-  { id: 'nse', src: nseLogo, alt: 'NSE' },
+  { id: 'bank-albilad', src: '/assets/clients-asset/bankalbilad.svg', alt: 'Bank Albilad' },
+  { id: 'bupa', src: '/assets/clients-asset/bupa.svg', alt: 'Bupa Arabia' },
+  { id: 'indian-bank', src: '/assets/clients-asset/indianbank.svg', alt: 'Indian Bank' },
+  { id: 'nse', src: '/assets/clients-asset/nse.svg', alt: 'NSE' },
 ] as const;
 
 // ============================================================
@@ -127,8 +122,8 @@ export const PartnersSection = memo(function PartnersSection() {
           </p>
 
           {/* Contact Button */}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className={cn(
               'inline-flex items-center justify-center',
               'bg-white hover:bg-gray-100 text-black',
@@ -139,7 +134,7 @@ export const PartnersSection = memo(function PartnersSection() {
             )}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </motion.div>
     </Section>

@@ -6,6 +6,8 @@
 
   export default defineConfig({
     plugins: [react(), tailwindcss()],
+    // Base path - use './' for relative paths (GoDaddy compatible)
+    base: './',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
@@ -18,17 +20,6 @@
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
-        'figma:asset/de5a74711b655d5394631256a2e65f4f4b7e3f42.png': path.resolve(__dirname, './src/assets/de5a74711b655d5394631256a2e65f4f4b7e3f42.png'),
-        'figma:asset/ab60fb89b643e72e94769301b2a7ea53c2788495.png': path.resolve(__dirname, './src/assets/ab60fb89b643e72e94769301b2a7ea53c2788495.png'),
-        'figma:asset/8c5a21adadebacbd69375684275fb89819b4d967.png': path.resolve(__dirname, './src/assets/8c5a21adadebacbd69375684275fb89819b4d967.png'),
-        'figma:asset/7e2cb6a493f6974234a10a9155f5a9e61358668d.png': path.resolve(__dirname, './src/assets/7e2cb6a493f6974234a10a9155f5a9e61358668d.png'),
-        'figma:asset/7d21c327f1e7740ce9c46cd595065dccfdcec99a.png': path.resolve(__dirname, './src/assets/7d21c327f1e7740ce9c46cd595065dccfdcec99a.png'),
-        'figma:asset/5353f37898f8daa86c3f3f525e94362e62de8b6a.png': path.resolve(__dirname, './src/assets/5353f37898f8daa86c3f3f525e94362e62de8b6a.png'),
-        'figma:asset/4ec63af28a6d626d15af88690afce1177f7da2aa.png': path.resolve(__dirname, './src/assets/4ec63af28a6d626d15af88690afce1177f7da2aa.png'),
-        'figma:asset/2b19803f6c5e3c26b39f607fe129d1919300df81.png': path.resolve(__dirname, './src/assets/2b19803f6c5e3c26b39f607fe129d1919300df81.png'),
-        'figma:asset/27594e92b9b432843319210cddc6514b6ee87450.png': path.resolve(__dirname, './src/assets/27594e92b9b432843319210cddc6514b6ee87450.png'),
-        'figma:asset/262ae2257b7f47685a1fd90f0f27d6372a2bca23.png': path.resolve(__dirname, './src/assets/262ae2257b7f47685a1fd90f0f27d6372a2bca23.png'),
-        'figma:asset/22502dfc1e4e8a242285d42db1a38e6e853633fc.png': path.resolve(__dirname, './src/assets/22502dfc1e4e8a242285d42db1a38e6e853633fc.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',
         'class-variance-authority@0.7.1': 'class-variance-authority',
@@ -63,10 +54,58 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist',
+      sourcemap: false,
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            // Vendor chunk for React ecosystem
+            'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            // Motion library
+            'motion': ['motion'],
+            // UI components
+            'ui-vendor': ['@radix-ui/react-dialog', '@radix-ui/react-slot'],
+            // Data fetching
+            'data': ['swr'],
+            // Smooth scroll
+            'scroll': ['lenis'],
+          },
+          // Asset file naming with hash for cache busting
+          assetFileNames: (assetInfo) => {
+            const info = assetInfo.name?.split('.') || [];
+            const ext = info[info.length - 1];
+            if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
+              return `assets/images/[name]-[hash][extname]`;
+            }
+            if (/woff2?|eot|ttf|otf/i.test(ext)) {
+              return `assets/fonts/[name]-[hash][extname]`;
+            }
+            return `assets/[name]-[hash][extname]`;
+          },
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+        },
+      },
+      // Chunk size warning limit
+      chunkSizeWarningLimit: 500,
     },
     server: {
       port: 3000,
       open: true,
+    },
+    preview: {
+      port: 4173,
+      open: true,
+    },
+    // Enable gzip preview
+    optimizeDeps: {
+      include: ['react', 'react-dom', 'react-router-dom', 'motion', 'swr', 'lenis'],
     },
   });

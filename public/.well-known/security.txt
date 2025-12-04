@@ -1,0 +1,13 @@
+# Tech Edge Security Policy
+# https://www.techedge.sa/.well-known/security.txt
+
+Contact: mailto:security@techedge.sa
+Contact: https://www.techedge.sa/contact
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en, ar
+Canonical: https://www.techedge.sa/.well-known/security.txt
+Policy: https://www.techedge.sa/security-policy
+Hiring: https://www.techedge.sa/careers
+
+# We take security seriously. If you discover a security vulnerability,
+# please report it to us responsibly via the contact information above.

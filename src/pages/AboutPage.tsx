@@ -2,16 +2,15 @@ import { memo, lazy, Suspense } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { ANIMATIONS, SCROLL_VIEWPORT } from '@/lib/constants';
+import { useAboutSEO } from '@/lib/seo';
 
 // Layout Components
 import { FloatingNav, TopNavigation, Footer } from '@/components/layout';
 
-// Import Tech Edge logo
-import techedgeLogo from '@/assets/techedgelogo.svg';
-
-// Import about assets
-import visionImage from '@/assets/about-asset/visionrightside.svg';
-import missionImage from '@/assets/about-asset/missionleftside.svg';
+// Asset paths (from public folder)
+const techedgeLogo = '/assets/techedgelogo.svg';
+const visionImage = '/assets/about-asset/visionrightside.svg';
+const missionImage = '/assets/about-asset/missionleftside.svg';
 
 // Lazy-loaded sections for reuse
 const FeaturesSection = lazy(() => import('@/components/sections/FeaturesSection').then(m => ({ default: m.FeaturesSection })));
@@ -32,6 +31,9 @@ const SectionLoader = memo(function SectionLoader() {
 // About Page Component
 // ============================================================
 export const AboutPage = memo(function AboutPage() {
+  // Apply SEO meta tags for about page
+  useAboutSEO();
+
   return (
     <div className={cn(
       'relative flex flex-col items-center',

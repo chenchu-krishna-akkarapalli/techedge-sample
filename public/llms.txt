@@ -1,0 +1,69 @@
+# Tech Edge - AI Search Guidelines
+# This file helps AI assistants and search engines understand our site
+
+## Site Overview
+name: Tech Edge
+domain: www.techedge.sa
+language: en, ar
+region: Saudi Arabia, Middle East
+industry: Technology, IT Consulting, Digital Transformation
+
+## Primary Topics
+- Digital Transformation
+- SaaS Development
+- Cloud Computing & Migration
+- API Development & Integration
+- Microservices Architecture
+- DevOps & Automation
+- IT Consulting
+- Staff Augmentation
+- Quality Assurance
+
+## Key Services
+1. SaaS Product Development
+   - Cloud-native applications
+   - Modern architecture
+   - Scalable solutions
+
+2. API & Microservices
+   - RESTful API design
+   - GraphQL implementation
+   - Service mesh architecture
+
+3. Cloud Implementation
+   - Multi-cloud management
+   - AWS, Azure, GCP
+   - Infrastructure as Code
+
+4. Digital Consulting
+   - Business strategy alignment
+   - Process automation
+   - Compliance solutions
+
+5. Integration Services
+   - iPaaS solutions
+   - Real-time data sync
+   - Enterprise integration
+
+6. Quality Assurance
+   - Test automation
+   - Performance testing
+   - Security testing
+
+## Contact Information
+email: info@techedge.sa
+location: Riyadh, Saudi Arabia
+
+## Social Media
+linkedin: /company/techedge-sa
+twitter: @techedge_sa
+
+## Relevant Keywords
+- Tech Edge Saudi Arabia
+- IT consulting Riyadh
+- Digital transformation KSA
+- Cloud solutions Middle East
+- SaaS development Saudi
+- Enterprise software Riyadh
+- Vision 2030 technology partner
+- NEOM technology solutions

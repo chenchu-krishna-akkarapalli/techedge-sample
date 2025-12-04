@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import emailjs from '@emailjs/browser';
 import { cn } from '@/lib/utils';
 import { ANIMATIONS, SCROLL_VIEWPORT } from '@/lib/constants';
+import { useContactSEO } from '@/lib/seo';
 
 // Layout Components
 import { FloatingNav, TopNavigation, Footer } from '@/components/layout';
@@ -54,6 +55,9 @@ const SectionLoader = memo(function SectionLoader() {
 // Contact Page Component
 // ============================================================
 export const ContactPage = memo(function ContactPage() {
+  // Apply SEO meta tags for contact page
+  useContactSEO();
+
   return (
     <div className={cn(
       'relative flex flex-col items-center',

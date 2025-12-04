@@ -2,6 +2,7 @@ import { memo, lazy, Suspense } from 'react';
 import { motion } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { ANIMATIONS } from '@/lib/constants';
+import { useServicesSEO } from '@/lib/seo';
 
 // Layout Components
 import { FloatingNav, TopNavigation, Footer } from '@/components/layout';
@@ -25,6 +26,9 @@ const SectionLoader = memo(function SectionLoader() {
 // Services Page Component
 // ============================================================
 export const ServicesPage = memo(function ServicesPage() {
+  // Apply SEO meta tags for services page
+  useServicesSEO();
+
   return (
     <div className={cn(
       'relative flex flex-col items-center',

@@ -1,18 +1,229 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
+    <!-- Primary Meta Tags -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Build and Integrate Site</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- SEO Meta Tags -->
+    <title>Tech Edge | Digital Transformation & IT Solutions in Saudi Arabia</title>
+    <meta name="title" content="Tech Edge | Digital Transformation & IT Solutions in Saudi Arabia" />
+    <meta name="description" content="Tech Edge is a leading digital transformation and IT consulting company in Saudi Arabia. We specialize in SaaS development, cloud solutions, API integration, microservices architecture, and enterprise digital solutions. Transform your business with our expert technology services." />
+    <meta name="keywords" content="Tech Edge, digital transformation, IT consulting, Saudi Arabia, SaaS development, cloud solutions, API integration, microservices, enterprise solutions, software development, DevOps, cloud migration, Riyadh, KSA, technology partner, IT services, business automation, digital strategy, Vision 2030, NEOM technology" />
+    <meta name="author" content="Tech Edge" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.techedge.sa/" />
+    
+    <!-- Language & Region -->
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="SA-01" />
+    <meta name="geo.placename" content="Riyadh" />
+    <meta name="geo.position" content="24.7136;46.6753" />
+    <meta name="ICBM" content="24.7136, 46.6753" />
+    <link rel="alternate" hreflang="en" href="https://www.techedge.sa/" />
+    <link rel="alternate" hreflang="ar" href="https://www.techedge.sa/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.techedge.sa/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.techedge.sa/" />
+    <meta property="og:title" content="Tech Edge | Digital Transformation & IT Solutions in Saudi Arabia" />
+    <meta property="og:description" content="Transform your business with Tech Edge - Saudi Arabia's premier digital transformation partner. Expert SaaS development, cloud solutions, API integration, and enterprise IT services." />
+    <meta property="og:image" content="https://www.techedge.sa/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Tech Edge - Digital Transformation Solutions" />
+    <meta property="og:site_name" content="Tech Edge" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ar_SA" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@techedge_sa" />
+    <meta name="twitter:creator" content="@techedge_sa" />
+    <meta name="twitter:url" content="https://www.techedge.sa/" />
+    <meta name="twitter:title" content="Tech Edge | Digital Transformation & IT Solutions in Saudi Arabia" />
+    <meta name="twitter:description" content="Transform your business with Tech Edge - Saudi Arabia's premier digital transformation partner. Expert SaaS development, cloud solutions, API integration, and enterprise IT services." />
+    <meta name="twitter:image" content="https://www.techedge.sa/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Tech Edge - Digital Transformation Solutions" />
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="techedge-sa" />
+    
+    <!-- Additional SEO -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="msapplication-TileColor" content="#2563eb" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Tech Edge" />
+    <meta name="application-name" content="Tech Edge" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Favicons - Using Tech Edge SVG Logo -->
+    <link rel="icon" type="image/svg+xml" href="/assets/techedgelogo.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/assets/techedgelogo.svg" color="#2563eb" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/assets/techedgelogo.svg" as="image" type="image/svg+xml" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://api.emailjs.com" />
+    
+    <!-- Google Fonts with Display Swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="/og-image.jpg" />
+    
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.techedge.sa/#organization",
+      "name": "Tech Edge",
+      "alternateName": "TechEdge",
+      "url": "https://www.techedge.sa",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.techedge.sa/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "image": "https://www.techedge.sa/og-image.jpg",
+      "description": "Tech Edge is a leading digital transformation and IT consulting company in Saudi Arabia, specializing in SaaS development, cloud solutions, API integration, and enterprise digital solutions.",
+      "email": "info@techedge.sa",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Riyadh",
+        "addressRegion": "Riyadh Province",
+        "addressCountry": "SA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/techedge-sa",
+        "https://twitter.com/techedge_sa"
+      ],
+      "knowsAbout": [
+        "Digital Transformation",
+        "SaaS Development",
+        "Cloud Computing",
+        "API Integration",
+        "Microservices Architecture",
+        "DevOps",
+        "IT Consulting"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Saudi Arabia"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://www.techedge.sa/#website",
+      "url": "https://www.techedge.sa",
+      "name": "Tech Edge",
+      "description": "Digital Transformation & IT Solutions in Saudi Arabia",
+      "publisher": {
+        "@id": "https://www.techedge.sa/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.techedge.sa/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      },
+      "inLanguage": ["en", "ar"]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://www.techedge.sa/#localbusiness",
+      "name": "Tech Edge",
+      "image": "https://www.techedge.sa/og-image.jpg",
+      "url": "https://www.techedge.sa",
+      "email": "info@techedge.sa",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "King Fahd Road",
+        "addressLocality": "Riyadh",
+        "addressRegion": "Riyadh Province",
+        "postalCode": "12345",
+        "addressCountry": "SA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.7136,
+        "longitude": 46.6753
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$$"
+    }
+    </script>
+    
+    <!-- Google Analytics (replace UA-XXXXXXXX with actual ID) -->
+    <!-- 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
   </head>
 
   <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+      Skip to main content
+    </a>
+    
     <div id="root"></div>
+    
+    <!-- Noscript fallback for SEO -->
+    <noscript>
+      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+        <h1>Tech Edge - Digital Transformation & IT Solutions</h1>
+        <p>JavaScript is required to view this website. Please enable JavaScript in your browser settings.</p>
+        <p>For the best experience, please visit us at <a href="https://www.techedge.sa">www.techedge.sa</a></p>
+      </div>
+    </noscript>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>  

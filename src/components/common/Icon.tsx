@@ -39,19 +39,15 @@ export const Icon = memo(function Icon({
   }
 
   // Determine viewBox based on icon type
-  const viewBox = name === 'logo' 
-    ? '0 0 32 70' 
-    : name === 'arrow' 
-      ? '0 0 6 7'
-      : name === 'check' || name === 'close'
-        ? '0 0 14 14'
-        : '0 0 24 24';
+  const viewBox = name === 'arrow' 
+    ? '0 0 6 7'
+    : '0 0 24 24';
 
   return (
     <svg
       className={cn('shrink-0', className)}
       width={size}
-      height={name === 'logo' ? size * 2.1875 : size}
+      height={size}
       viewBox={viewBox}
       fill="none"
       aria-hidden={!ariaLabel}
@@ -83,30 +79,6 @@ export const ArrowIcon = memo(function ArrowIcon({
       <Icon name="arrow" size={size} color={color} />
     </div>
   );
-});
-
-export const CheckIcon = memo(function CheckIcon({ 
-  size = 14, 
-  className,
-  color = '#485C11' 
-}: SimpleIconProps) {
-  return <Icon name="check" size={size} className={className} color={color} />;
-});
-
-export const CloseIcon = memo(function CloseIcon({ 
-  size = 14, 
-  className,
-  color = '#6F6F6F' 
-}: SimpleIconProps) {
-  return <Icon name="close" size={size} className={className} color={color} />;
-});
-
-export const LogoIcon = memo(function LogoIcon({ 
-  size = 32, 
-  className,
-  color = 'black' 
-}: SimpleIconProps) {
-  return <Icon name="logo" size={size} className={className} color={color} />;
 });
 
 // ============================================================
